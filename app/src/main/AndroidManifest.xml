@@ -16,6 +16,9 @@
         android:theme="@style/Theme.EasyShop"
         tools:replace="android:theme">
         <activity
+            android:name=".AdminMaintainProductsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SearchProductActivity"
             android:exported="false" />
         <activity

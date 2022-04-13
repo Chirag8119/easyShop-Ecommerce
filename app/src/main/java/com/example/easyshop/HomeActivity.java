@@ -44,6 +44,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
+    private String type="";
+
+
 
     // @Override
    // protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
      //   binding = ActivityHomeBinding.inflate(getLayoutInflater());
       //  setContentView(binding.getRoot());
+
+       Intent intent = getIntent();
+       Bundle bundle = intent.getExtras();
+       if(bundle!=null){
+           type=getIntent().getExtras().get("Admin").toString();
+       }
 
         ProductsRef= FirebaseDatabase.getInstance().getReference().child("Products");
 
@@ -69,8 +78,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
        fab.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-              Intent intent= new Intent(HomeActivity.this,CartActivity.class);
-              startActivity(intent);
+               if (!type.equals("Admin")) {
+                   Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+                   startActivity(intent);
+               }
            }
        });
      /*   setSupportActionBar(binding.appBarHome.toolbar);
@@ -100,9 +111,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         View headerView =navigationView.getHeaderView(0);
         TextView userNameTextView=headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.profile_image);
-        userNameTextView.setText(Prevalent.currentOnlineUsers.getName());
-        Picasso.get().load(Prevalent.currentOnlineUsers.getImage()).placeholder(R.drawable.profile).into(profileImageView);
-
+        if(!type.equals("Admin")) {
+            userNameTextView.setText(Prevalent.currentOnlineUsers.getName());
+            Picasso.get().load(Prevalent.currentOnlineUsers.getImage()).placeholder(R.drawable.profile).into(profileImageView);
+        }
 
 
         // Passing each menu ID as a set of Ids because each
@@ -149,9 +161,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent=new Intent(HomeActivity.this,ProductDetailsActivity.class);
-                                intent.putExtra("pid",model.getPid());
-                                startActivity(intent);
+                                if(type.equals("Admin")){
+
+                                    Intent intent=new Intent(HomeActivity.this,AdminMaintainProductsActivity.class);
+                                    intent.putExtra("pid",model.getPid());
+                                    startActivity(intent);
+                                }
+                                else{
+
+                                    Intent intent=new Intent(HomeActivity.this,ProductDetailsActivity.class);
+                                    intent.putExtra("pid",model.getPid());
+                                    startActivity(intent);
+                                }
+
                             }
                         });
                     }
@@ -226,33 +248,50 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_cart)
         {
+            if (!type.equals("Admin")) {
+                Intent intent= new Intent(HomeActivity.this,CartActivity.class);
+                startActivity(intent);
 
-            Intent intent= new Intent(HomeActivity.this,CartActivity.class);
-            startActivity(intent);
+            }
+
+
         }
         else if (id == R.id.nav_search)
         {
-            Intent intent= new Intent(HomeActivity.this,SearchProductActivity.class);
-            startActivity(intent);
+            if (!type.equals("Admin")) {
+                Intent intent= new Intent(HomeActivity.this,SearchProductActivity.class);
+                startActivity(intent);
+
+            }
+
 
         }
         else if (id == R.id.nav_categories)
         {
 
+
         }
         else if (id == R.id.nav_settings)
         {
-            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
-            startActivity(intent);
+            if (!type.equals("Admin")) {
+                Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+                startActivity(intent);
+
+            }
+
         }
         else if (id == R.id.nav_logout)
         {
-            Paper.book().destroy();
+            if (!type.equals("Admin")) {
 
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
+                Paper.book().destroy();
+
+                Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
