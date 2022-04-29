@@ -7,19 +7,27 @@
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/drawable/input_design.xml" value="0.182" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_admin_add_new_product.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_admin_category.xml" value="0.18" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_admin_home.xml" value="0.15" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_admin_maintain_products.xml" value="0.15" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_admin_new_order.xml" value="0.1" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_admin_user_products.xml" value="0.1" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_cart.xml" value="0.1" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_check_new_products.xml" value="0.1" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_confirm_final_order.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_fullscreen.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_login.xml" value="0.15" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_main.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_product_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_reset_password.xml" value="0.18" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_search_product.xml" value="0.1" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_seller_home.xml" value="0.16" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_seller_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_seller_registration.xml" value="0.129981884057971" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_sensor.xml" value="0.1" />
-        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_settings.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_settings.xml" value="0.22" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/activity_show_purchase_product.xml" value="0.19519927536231885" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/app_bar_home.xml" value="0.18" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/cart_item_layout.xml" value="0.1" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/content_home.xml" value="0.10552763819095477" />
@@ -29,7 +37,9 @@
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/nav_header_home.xml" value="0.19" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/orders_layout.xml" value="0.18" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/product_items_layout.xml" value="0.22" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/layout/seller_item_view.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
+        <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/Users/ctyag/Downloads/easyShop/app/src/main/res/menu/home.xml" value="0.20416666666666666" />
       </map>
     </option>

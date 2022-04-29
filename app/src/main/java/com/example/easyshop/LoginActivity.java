@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loadingBar;
     private String parentDbName="Users";
     private CheckBox checkBox;
-    private TextView AdminLink, NotAdminLink;
+    private TextView AdminLink, NotAdminLink, ForgotPasswordLink;
 
 
     @Override
@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         AdminLink = (TextView) findViewById(R.id.admin_panel_link);
         NotAdminLink = (TextView) findViewById(R.id.not_admin_panel_link);
 
+        ForgotPasswordLink=findViewById(R.id.forget_password_link);
         checkBox = (CheckBox) findViewById(R.id.remember_me_chkb);
         Paper.init(this);
 
@@ -57,11 +58,19 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
+        ForgotPasswordLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(LoginActivity.this,ResetPasswordActivity.class);
+                intent.putExtra("check","login");
+                startActivity(intent);
+            }
+        });
 
         AdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginButton.setText("Login Admin");
+                LoginButton.setText("LOGIN ADMIN");
                 AdminLink.setVisibility(View.INVISIBLE);
                 NotAdminLink.setVisibility(View.VISIBLE);
                 parentDbName="Admins";
@@ -71,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
         NotAdminLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginButton.setText("Login");
+                LoginButton.setText("LOGIN");
                 AdminLink.setVisibility(View.VISIBLE);
                 NotAdminLink.setVisibility(View.INVISIBLE);
                 parentDbName="Users";
@@ -121,14 +130,14 @@ public class LoginActivity extends AppCompatActivity {
                                      if (parentDbName.equals("Users")) {
                                         Toast.makeText(LoginActivity.this, "Logged in Successfully ...", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
-                                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this, FullscreenActivity.class);
                                         Prevalent.currentOnlineUsers=usersData;
                                         startActivity(intent);
                                     }
                                     else if (parentDbName.equals("Admins")) {
                                         Toast.makeText(LoginActivity.this, "Welcome Admin, You are Logged in Successfully ...", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
-                                        Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                                         startActivity(intent);
                                     }
                                 }

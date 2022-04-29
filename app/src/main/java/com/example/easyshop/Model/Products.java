@@ -1,12 +1,12 @@
 package com.example.easyshop.Model;
 
 public class Products {
-    String category, date, description, image, pid, pname, price, time ;
+    String category, date, description, image, pid, pname, price, time, productsState ;
 
     public Products() {
     }
 
-    public Products(String category, String date, String description, String image, String pid, String pname, String price, String time) {
+    public Products(String category, String date, String description, String image, String pid, String pname, String price, String time, String productsState) {
         this.category = category;
         this.date = date;
         this.description = description;
@@ -15,6 +15,7 @@ public class Products {
         this.pname = pname;
         this.price = price;
         this.time = time;
+        this.productsState = productsState;
     }
 
     public String getCategory() {
@@ -79,5 +80,13 @@ public class Products {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getProductsState() {
+        return productsState;
+    }
+
+    public void setProductsState(String productsState) {
+        this.productsState = productsState;
     }
 }

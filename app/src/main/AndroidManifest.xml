@@ -16,6 +16,34 @@
         android:theme="@style/Theme.EasyShop"
         tools:replace="android:theme">
         <activity
+            android:name=".FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/Theme.EasyShop.Fullscreen" />
+        <activity
+            android:name=".ShowPurchaseProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckNewProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Seller.SellerHomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_seller_home" />
+        <activity
+            android:name=".Seller.SellerLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Seller.SellerRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminMaintainProductsActivity"
             android:exported="false" />
         <activity

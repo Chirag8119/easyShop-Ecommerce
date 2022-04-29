@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         Paper.init(this);
        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-       toolbar.setTitle("Home");
+       toolbar.setTitle("Welcome Enjoy Purchasing!");
        setSupportActionBar(toolbar);
 
 
@@ -145,7 +145,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         FirebaseRecyclerOptions<Products> options =
                 new FirebaseRecyclerOptions.Builder<Products>()
-                        .setQuery(ProductsRef, Products.class)
+                        .setQuery(ProductsRef.orderByChild("productsState").equalTo("Approved"), Products.class)
                         .build();
 
 

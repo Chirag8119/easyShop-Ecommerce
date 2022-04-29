@@ -33,7 +33,7 @@ public class CartActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private  RecyclerView.LayoutManager layoutManager;
-    private Button NextProcessBtn;
+    private Button NextProcessBtn , btn2;
     private TextView txtTotalBtn, txtMsg1;
 
     private int overTotalPrice=0;
@@ -48,8 +48,17 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         NextProcessBtn=(Button) findViewById(R.id.next_process_btn);
         txtTotalBtn=(TextView) findViewById(R.id.total_price);
+        btn2=findViewById(R.id.next_process_btn2);
 
         txtMsg1=(TextView) findViewById(R.id.msg1);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(CartActivity.this,ShowPurchaseProductActivity.class);
+
+                startActivity(intent);
+            }
+        });
 
 
         NextProcessBtn.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +80,7 @@ public class CartActivity extends AppCompatActivity {
 
 
         super.onStart();
-        CheckOrderState();
+      //  CheckOrderState();
 
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
         FirebaseRecyclerOptions<Cart> options=
@@ -144,7 +153,7 @@ public class CartActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         adapter.startListening();
     }
-    private void CheckOrderState(){
+  /*  private void CheckOrderState(){
         DatabaseReference ordersRef;
         ordersRef=FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUsers.getPhone());
 
@@ -180,5 +189,5 @@ public class CartActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 }

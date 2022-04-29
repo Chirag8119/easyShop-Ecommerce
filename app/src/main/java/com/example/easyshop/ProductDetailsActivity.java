@@ -71,7 +71,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        CheckOrderState();
+      //  CheckOrderState();
     }
 
     private void addingToCartList() {
@@ -141,7 +141,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             }
         });
     }
-    private void CheckOrderState() {
+  /*  private void CheckOrderState() {
         DatabaseReference ordersRef;
         ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUsers.getPhone());
 
@@ -168,5 +168,5 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 }

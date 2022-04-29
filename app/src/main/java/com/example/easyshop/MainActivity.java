@@ -11,10 +11,15 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.easyshop.Model.Users;
 import com.example.easyshop.Prevalent.Prevalent;
+import com.example.easyshop.Seller.SellerHomeActivity;
+import com.example.easyshop.Seller.SellerRegistrationActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +40,7 @@ import io.paperdb.Paper;
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
     private Button joinNowButton, loginButton;
     private ProgressDialog loadingBar;
+    private TextView sellerBegin;
 
 
     private SensorManager sensorManager;
@@ -56,9 +62,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         //view = (View) findViewById(R.id.app_slogan);
         view= (Button) findViewById(R.id.main_join_now_btn);
+        sellerBegin=findViewById(R.id.seller_begin);
         view.setBackgroundColor(View.INVISIBLE);
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         lastUpdate = System.currentTimeMillis();
+        sellerBegin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(MainActivity.this, SellerRegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +104,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         }
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
+
+        if(firebaseUser!=null){
+            Intent intent = new Intent(MainActivity.this, SellerHomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
     }
 
     private void AllowAccess(String phone, String password) {
